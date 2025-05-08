@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1037132259071",
+    "project_id": "recipeshare-98314",
+    "storage_bucket": "recipeshare-98314.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037132259071:android:8aa60b05acec45fc0bb6ca",
+        "android_client_info": {
+          "package_name": "com.example.finalproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByrSyOQXHYNzMpnQXcDk0jDM3qc5E4fhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
