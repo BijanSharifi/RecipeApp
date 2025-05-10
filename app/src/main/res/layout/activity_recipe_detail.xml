@@ -36,15 +36,29 @@
                 android:textSize="24sp"
                 android:layout_marginTop="12dp"/>
 
+            <TextView
+                android:id="@+id/tvOverallRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overall User Rating:"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
             <RatingBar
                 android:id="@+id/ratingBarDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:isIndicator="true"
+                android:isIndicator="false"
                 android:numStars="5"
-                android:stepSize="0.5"
+                android:stepSize="0.1"
                 android:layout_marginTop="8dp"/>
 
+            <TextView
+                android:id="@+id/tvDifficulty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Difficulty Rating:"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

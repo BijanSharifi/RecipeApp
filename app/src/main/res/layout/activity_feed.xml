@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp">
 
-    <!-- Your feed list, with bottom padding for the nav bar -->
+    <!-- Feed list, with bottom padding for the nav bar -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRecipes"
         android:layout_width="0dp"

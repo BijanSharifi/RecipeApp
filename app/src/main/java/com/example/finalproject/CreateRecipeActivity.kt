@@ -11,6 +11,8 @@ import android.util.Base64
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -32,6 +34,8 @@ class CreateRecipeActivity : AppCompatActivity() {
     private lateinit var etIngredients: EditText
     private lateinit var btnTakePhoto: Button
     private lateinit var btnSubmit: Button
+    private lateinit var sbDifficulty : SeekBar
+    private lateinit var tvDifficulty : TextView
 
     private var lastBitmap: Bitmap? = null
     private val CAMERA_REQ_CODE = 100
@@ -51,6 +55,24 @@ class CreateRecipeActivity : AppCompatActivity() {
             startActivity(Intent(this, CreateRecipeActivity::class.java))
             finish()
         }
+
+        sbDifficulty = findViewById(R.id.sbDifficulty)
+        tvDifficulty = findViewById(R.id.tvDifficulty)
+
+        sbDifficulty.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                tvDifficulty.setText("Difficulty Rating " + progress + "/10")
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+        })
 
         ivPreview     = findViewById(R.id.ivPreview)
         etTitle       = findViewById(R.id.etTitle)
@@ -111,6 +133,7 @@ class CreateRecipeActivity : AppCompatActivity() {
         val title       = etTitle.text.toString().trim()
         val desc        = etDescription.text.toString().trim()
         val ingredients = etIngredients.text.toString().trim()
+        val difficulty = sbDifficulty.progress
         val bmp         = lastBitmap
 
         if (title.isEmpty() || desc.isEmpty() || ingredients.isEmpty() || bmp == null) {
@@ -128,6 +151,7 @@ class CreateRecipeActivity : AppCompatActivity() {
             id          = id,
             title       = title,
             description = desc,
+            difficulty = difficulty,
             imageData   = imageData,
             rating      = 0f,
             ratingCount = 0,
