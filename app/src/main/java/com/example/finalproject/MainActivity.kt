@@ -1,3 +1,8 @@
+// Team Contribution Percentages
+// Bijan Sharifi - 33%
+// Austin Manos - 33%
+// Muhammad Maaz Khan - 33%
+
 package com.example.finalproject
 
 import android.content.Intent
@@ -23,7 +28,7 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.LoadAdError
 
-class FeedActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var rvRecipes: RecyclerView
     private lateinit var adapter: RecipeAdapter
@@ -53,7 +58,7 @@ class FeedActivity : AppCompatActivity() {
         loadAd()
 
         btnFeed.setOnClickListener {
-            startActivity(Intent(this, FeedActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
 
         }
@@ -111,7 +116,7 @@ class FeedActivity : AppCompatActivity() {
                 }
                 override fun onCancelled(error: DatabaseError) {
                     Toast.makeText(
-                        this@FeedActivity,
+                        this@MainActivity,
                         "Failed to load recipes: ${error.message}",
                         Toast.LENGTH_LONG
                     ).show()

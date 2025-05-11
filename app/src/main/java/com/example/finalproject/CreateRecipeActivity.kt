@@ -50,7 +50,7 @@ class CreateRecipeActivity : AppCompatActivity() {
         btnLast.isEnabled = PrefsHelper.getLastRecipe(this) != null
 
         btnFeed.setOnClickListener {
-            startActivity(Intent(this, FeedActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
         btnCreate.setOnClickListener {
@@ -174,8 +174,7 @@ class CreateRecipeActivity : AppCompatActivity() {
         ref.setValue(recipe)
             .addOnSuccessListener {
                 Toast.makeText(this, "Recipe saved!", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, FeedActivity::class.java))
-                finish()
+                startActivity(Intent(this, SplashActivity::class.java))
             }
 
     }

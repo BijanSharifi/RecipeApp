@@ -26,8 +26,9 @@
             android:value="ca-app-pub-3940256099942544~3347511713">
         </meta-data>
 
+
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,8 +36,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SplashActivity"/>
         <activity android:name=".CreateRecipeActivity"/>
-        <activity android:name=".FeedActivity"/>
         <activity android:name=".RecipeDetailActivity"/>
     </application>
 

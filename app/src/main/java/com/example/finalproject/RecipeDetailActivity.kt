@@ -41,7 +41,7 @@ class RecipeDetailActivity : AppCompatActivity() {
         btnLast.isEnabled = PrefsHelper.getLastRecipe(this) != null
 
         btnFeed.setOnClickListener {
-            startActivity(Intent(this, FeedActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
         btnCreate.setOnClickListener {
