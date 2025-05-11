@@ -97,7 +97,6 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:orientation="horizontal"
-        android:background="#EEE"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -115,6 +114,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Create" />
+
+        <Button
+            android:id="@+id/btnLastViewed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Last Viewed" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

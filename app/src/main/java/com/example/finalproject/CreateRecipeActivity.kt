@@ -46,6 +46,8 @@ class CreateRecipeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create)
         val btnFeed   = findViewById<Button>(R.id.btnNavFeed)
         val btnCreate = findViewById<Button>(R.id.btnNavCreate)
+        val btnLast = findViewById<Button>(R.id.btnLastViewed)
+        btnLast.isEnabled = PrefsHelper.getLastRecipe(this) != null
 
         btnFeed.setOnClickListener {
             startActivity(Intent(this, FeedActivity::class.java))
@@ -54,6 +56,13 @@ class CreateRecipeActivity : AppCompatActivity() {
         btnCreate.setOnClickListener {
             startActivity(Intent(this, CreateRecipeActivity::class.java))
             finish()
+        }
+        btnLast.setOnClickListener {
+            PrefsHelper.getLastRecipe(this)?.let {
+                val intent = Intent(this, RecipeDetailActivity::class.java)
+                intent.putExtra("RECIPE_ID", it)
+                startActivity(intent)
+            } ?: Toast.makeText(this, "No last viewed recipe found", Toast.LENGTH_SHORT).show()
         }
 
         sbDifficulty = findViewById(R.id.sbDifficulty)
